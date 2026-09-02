@@ -1,3 +1,6 @@
+import math
+
+
 class Maths:
     def count_digits(self,n:int):
         count = 0
@@ -34,3 +37,14 @@ class Maths:
 
             n=n//10
         return k == s
+
+    def all_divisors(self,n:int)->list[int]:
+        factors:list[int]=[]
+        for i in range(1,int(math.sqrt(n))+1):
+            
+            if n%i==0:
+                factors.append(i)
+                if n//i != i:
+                    factors.append(n//i)
+        factors.sort()
+        return factors
