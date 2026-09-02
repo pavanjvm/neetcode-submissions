@@ -19,14 +19,18 @@ class Maths:
             n1=n1%n2
         else:
             n2 = n2%n1
-    
+
         if n1 == 0:
             return n2
         else:
             return n1
-            
-    
 
-           
-           
-           
+    def armstrong_number(self,n:int)->bool:
+        s = 0
+        k=n
+        while n>0:
+
+            s+=(n%10)**3
+
+            n=n//10
+        return k == s
